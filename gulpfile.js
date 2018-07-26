@@ -1,10 +1,7 @@
 var gulp = require('gulp');
-var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass');
+var browserSync = require('browser-sync').create();
 
-gulp.task('saludar', function(){
-	console.log('Hola mundo!!!!');
-});
 
 // Static Server + watching scss/html files
 gulp.task('serve', ['sass'], function() {
@@ -12,8 +9,8 @@ gulp.task('serve', ['sass'], function() {
         server: "./app"
     });
 
-    gulp.watch("app/scss/**/*.scss", ['sass']);
-    //gulp.watch("app/*.html").on('change', browserSync.reload);
+    gulp.watch("scss/**/*.scss", ['sass']);
+    gulp.watch("app/*.html").on('change', browserSync.reload);
 });
 
 
